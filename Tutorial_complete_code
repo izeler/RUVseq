@@ -1,11 +1,9 @@
 library(RUVSeq)
 library(EDASeq)
-workingDir = "C:/Users/q010ie/Desktop/ruvseq";
+workingDir = "ruvseq";
 setwd(workingDir); 
-#File path needs to be changed and only forward slash / should be used.
-#row.names="Geneid" assumes that this column is the row names. 
-#If this is not wanted argument should be removed which will put numbers as row names. 
-#If this wants to be changed, this  or changed to desired column name.
+
+#row.names="Geneid" assumes that this column is the row names. Iff this is not wanted argument should be removed which will put numbers as row names. 
 
 dex <- read.csv("alldata_geneasnumbers.txt", header=TRUE, sep="\t", row.names = "Geneid", stringsAsFactors = FALSE) #select geneid as index column
 head(dex)
@@ -91,4 +89,4 @@ plotPCA(set4, col=colors[x], cex=1.2, main="After RUVr normalization")
 normalized_counts_ruvs <- normCounts(set4)
 
 #export the normalized counts to desired path(path needs to be changed to your choice)
-write.csv(normalized_counts_ruvs, "C:/Users/q010ie/Desktop/normalizedcountsRUVS.csv")
+write.csv(normalized_counts_ruvs, "normalizedcountsRUVS.csv")
